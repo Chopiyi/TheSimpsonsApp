@@ -5,23 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/primary_light">
+
+    <include layout="@layout/toolbar"></include>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:paddingTop="@dimen/padding_main">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mensaje_seleccion"
+            android:textColor="@color/colorAccent"
+            android:layout_marginVertical="@dimen/margen_contenido"
+            android:textSize="@dimen/subtitle_size"
+            android:textAlignment="center">
+        </TextView>
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/spinner_frases">
+            android:id="@+id/spinner_frases"
+            android:layout_marginVertical="@dimen/margen_contenido"
+            android:backgroundTintMode="screen"
+            android:backgroundTint="@color/colorPrimary"
+            android:popupBackground="@color/primary_light">
         </Spinner>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/solicitar_consejo"
-            android:id="@+id/boton_solicitar">
+            android:id="@+id/boton_solicitar"
+            android:background="@color/colorAccent"
+            android:textColor="@color/white_text"
+            android:paddingHorizontal="@dimen/padding_button"
+            android:layout_marginVertical="@dimen/margen_contenido">
         </Button>
     </LinearLayout>
     <LinearLayout
@@ -31,7 +52,8 @@
         <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/lista_quotes">
+            android:id="@+id/lista_quotes"
+            android:layout_marginTop="@dimen/margen_contenido">
         </ListView>
     </LinearLayout>
 </LinearLayout>

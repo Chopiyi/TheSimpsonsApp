@@ -1,31 +1,28 @@
 package cl.inacap.thesimpsonsapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import cl.inacap.thesimpsonsapp.adapters.QuotesListAdapter;
@@ -40,11 +37,18 @@ public class MainActivity extends AppCompatActivity {
     private RequestQueue queue;
     private List<Quote> quoteList = new ArrayList<>();
     private ArrayAdapter<CharSequence> spinnerAdapter;
+    private ImageView imagen_toolbar;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.toolbar = findViewById(R.id.toolbar);
+        this.setSupportActionBar((Toolbar) toolbar);
+        this.imagen_toolbar = findViewById(R.id.imagen_toolbar);
+        Picasso.get().get().load("https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Logo_The_Simpsons.svg/500px-Logo_The_Simpsons.svg.png")
+                .resize(260, 121).into(this.imagen_toolbar);
     }
 
     @Override

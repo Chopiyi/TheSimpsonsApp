@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="paddingToolbar">15dp</dimen>
+    <dimen name="margen_contenido">15dp</dimen>
+    <dimen name="padding_button">10dp</dimen>
+    <dimen name="padding_main">35dp</dimen>
+    <dimen name="subtitle_size">18sp</dimen>
+    <dimen name="title_size">22sp</dimen>
+    <dimen name="padding_hor_contenido">10dp</dimen>
+</resources>

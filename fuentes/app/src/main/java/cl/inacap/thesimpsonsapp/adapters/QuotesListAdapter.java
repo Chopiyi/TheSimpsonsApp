@@ -1,7 +1,6 @@
 package cl.inacap.thesimpsonsapp.adapters;
 
 import android.app.Activity;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,9 +50,12 @@ public class QuotesListAdapter extends ArrayAdapter<Quote> {
         TextView quote = view.findViewById(R.id.frase_quote);
         ImageView image = view.findViewById(R.id.imagen_quote);
         Quote frase = this.quotesList.get(position);
-        character.setText(frase.getCharacter());
-        quote.setText(frase.getQuote());
-        Picasso.get().load(frase.getImage()).resize(256, 256).centerCrop().into(image);
+        character.setText("By "+ frase.getCharacter());
+        quote.setText("'" + frase.getQuote() + "'");
+        Picasso.get().load(frase.getImage()).resize(256, 256).into(image);
+        if (position%2 == 0){
+            view.setBackgroundResource(R.color.colorPrimary);
+        }
         return view;
     }
 }

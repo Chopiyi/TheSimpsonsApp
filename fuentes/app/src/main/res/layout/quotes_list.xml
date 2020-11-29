@@ -3,23 +3,32 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:paddingVertical="@dimen/margen_contenido"
+    android:paddingHorizontal="@dimen/padding_hor_contenido"
+    android:id="@+id/item_list">
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imagen_quote"
+        android:paddingVertical="@dimen/margen_contenido"
         >
     </ImageView>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/frase_quote">
+        android:id="@+id/frase_quote"
+        android:textAlignment="center"
+        android:textSize="@dimen/title_size"
+        android:textStyle="bold|italic"
+        android:paddingVertical="@dimen/margen_contenido">
     </TextView>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/character_quote">
+        android:id="@+id/character_quote"
+        android:textAlignment="center"
+        android:textSize="@dimen/subtitle_size"
+        android:layout_marginBottom="@dimen/margen_contenido">
     </TextView>
-
-
 </LinearLayout>
